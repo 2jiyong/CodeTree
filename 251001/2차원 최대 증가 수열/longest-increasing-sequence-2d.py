@@ -17,3 +17,4 @@ ans = 0
 for r in range(n):
     ans = max(max(dp[r]),ans)
 print(ans)
+print(dp)
