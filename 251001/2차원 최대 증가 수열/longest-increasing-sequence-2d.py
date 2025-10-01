@@ -11,9 +11,11 @@ for r in range(n):
         
         for r1 in range(r):
             for c1 in range(c):
-                if grid[r1][c1]<grid[r][c] : 
+                if grid[r1][c1]<grid[r][c] and dp[r1][c1]!=0: 
                     dp[r][c] = max(dp[r][c], dp[r1][c1] + 1)
 ans = 0
 for r in range(n):
     ans = max(max(dp[r]),ans)
 print(ans)
+
+
