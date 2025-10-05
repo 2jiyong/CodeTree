@@ -12,6 +12,8 @@ for i in range(1, M+1):
         if i < coin:
             continue
         dp[i] = min(dp[i-coin]+1, dp[i])
+if dp[-1] == MAXSIZE:
+    dp[-1] = -1
 
 print(dp[-1])
 
