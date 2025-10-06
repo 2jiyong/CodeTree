@@ -16,7 +16,7 @@ for j in range(n-1,-1,-1):
         if dp[i-A[j]] == MAX:
             continue
         dp[i] = min(dp[i-A[j]] + 1,dp[i])
-if dp[i] == MAX:
+if dp[i] > 500000:
     dp[i] = -1
 
 print(dp[-1])
