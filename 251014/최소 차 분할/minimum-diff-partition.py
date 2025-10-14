@@ -22,6 +22,9 @@ for i in range(n):
         if dp[i-1][j]:
             dp[i][j] = True
             continue
+            
+        if j < arr[i]:
+            continue
         # 이전에 불가했다면?
         # 직접 체크
         if dp[i-1][j-arr[i]]:
