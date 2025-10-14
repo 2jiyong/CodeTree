@@ -13,10 +13,13 @@ for i in range(n):
     if arr[i] > target_num:
         continue
 
+    if i == 0:
+        continue
+
     for j in range(1,target_num+1):
         # 합이 j가 되는 것이 가능?    
         # 이전에 가능했다면 이번도 가능
-        if i>0 and dp[i-1][j]:
+        if dp[i-1][j]:
             dp[i][j] = True
             continue
         # 이전에 불가했다면?
@@ -32,6 +35,8 @@ for j in range(target_num,-1,-1):
     if dp[n-1][j]:
         print(sum_nums-j-j)
         sys.exit()
-        
+
+# for d in dp:
+#     print(d)      
         
 
