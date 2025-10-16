@@ -1,15 +1,29 @@
-import sys
-MAX = sys.maxsize
-
 n, m = map(int, input().split())
 quests = [tuple(map(int, input().split())) for _ in range(n)]
+quests.insert(0,(0,0))
+# Please write your code here.
+import sys
+MAX = sys.maxsize
+a = 0
+for q in quests:
+    a+=q[0]
 
-dp = [MAX] * (m + 1)
+dp = [MAX]*(a+1)
 dp[0] = 0
 
-for e, t in quests:
-    for j in range(m, -1, -1):
-        nxt = min(m, j + e)  # M 이상은 모두 M으로 처리
-        dp[nxt] = min(dp[nxt], dp[j] + t)
+for i in range(1,n+1):
+    e = quests[i][0]
+    t = quests[i][1]
+    for j in range(a,-1,-1):    
+        if e > j :
+            continue
+        if dp[j-e] == MAX:
+            continue
+        dp[j] = min(dp[j], dp[j-e] + t)
 
-print(-1 if dp[m] == MAX else dp[m])
+# if dp[m] == MAX:
+#     dp[m] = -1
+print(min(dp[m:]))
+# print(dp)
+
+        
