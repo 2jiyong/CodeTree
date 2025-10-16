@@ -7,6 +7,9 @@ MAX = sys.maxsize
 a = 0
 for q in quests:
     a+=q[0]
+if m>a:
+    print(-1)
+    sys.exit()
 
 dp = [MAX]*(a+1)
 dp[0] = 0
@@ -23,7 +26,10 @@ for i in range(1,n+1):
 
 # if dp[m] == MAX:
 #     dp[m] = -1
-print(min(dp[m:]))
-# print(dp)
+
+ans = min(dp[m:])
+if ans == MAX:
+    ans = -1
+print(ans)
 
         
