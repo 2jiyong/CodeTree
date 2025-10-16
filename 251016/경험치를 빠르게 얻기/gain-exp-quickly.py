@@ -16,8 +16,10 @@ for i in range(1,n+1):
             val = j-e
             if val<0:
                 val = 0 
-            for k in range(val,j):        
-                dp[j] = min(dp[j], dp[k] + t)
+            min_val = min(dp[val:])
+            # for k in range(val,j):        
+            #     dp[j] = min(dp[j], dp[k] + t)
+            dp[j] = min(dp[j], min_val+t)
             continue         
         if e > j:
             continue
