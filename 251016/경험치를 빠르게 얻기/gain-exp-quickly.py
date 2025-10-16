@@ -3,7 +3,7 @@ quests = [tuple(map(int, input().split())) for _ in range(n)]
 quests.insert(0,0)
 # Please write your code here.
 import sys
-MAX = sys.maxsize
+MAX = 1000001
 
 dp = [[MAX]*(m+1) for _ in range(n+1)]
 dp[0][0] = 0
