@@ -3,29 +3,30 @@ quests = [tuple(map(int, input().split())) for _ in range(n)]
 quests.insert(0,0)
 # Please write your code here.
 import sys
-MAX = 1000001
+MAX = sys.maxsize
 
-dp = [[MAX]*(m+1) for _ in range(n+1)]
-dp[0][0] = 0
+dp = [MAX]*(m+1)
+dp[0] = 0
 
 for i in range(1,n+1):
     e = quests[i][0]
     t = quests[i][1]
-    for j in range(m+1):
-        dp[i][j] = min(dp[i][j], dp[i-1][j])
-
-        if e<=j:
-            dp[i][j] = min(dp[i][j], dp[i-1][j-e] + t)
-        
+    for j in range(m,-1,-1):
         if j == m:
-            if j-e < 0:
-                e = j
-            for k in range(j-e,j):
-                dp[i][j] = min(dp[i][j], dp[i-1][k] + t)
+            val = j-e
+            if val<0:
+                val = 0 
+            for k in range(val,j):        
+                dp[j] = min(dp[j], dp[k] + t)
+            continue         
+        if e > j:
+            continue
+        dp[j] = min(dp[j], dp[j-e] + t)
 
-# for d in dp:
-#     print(d)
-print(dp[n][m])
+
+
+
+print(dp[m])
 
 
         
