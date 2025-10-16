@@ -23,9 +23,8 @@ for i in range(1,n+1):
             continue
         dp[j] = min(dp[j], dp[j-e] + t)
 
-
-
-
+if dp[m] == MAX:
+    dp[m] = -1
 print(dp[m])
 
 
