@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10**6)  
+
 n = int(input())
 grid = [list(map(int, input().split())) for _ in range(n)]
 
@@ -34,5 +37,5 @@ for i in range(n):
 ans=0
 for d in dp:
     ans = max(ans,max(d))
-    
+
 print(ans)
