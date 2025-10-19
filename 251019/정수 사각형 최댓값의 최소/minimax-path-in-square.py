@@ -23,4 +23,4 @@ for i in range(n):
 # for d in dp:
 #     print(d)
 
-print(min(dp[n-1]))
+print(dp[n-1][n-1])
