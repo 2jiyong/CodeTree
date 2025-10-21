@@ -11,7 +11,7 @@ dp[1][3] = 0
 
 for i in range(2, n+1):
     for j in range(4):
-        if j == 0 or j == 3:
+        if j == 0:
             dp[i][j] = max(dp[i][j], dp[i-2][j] + coin[i])
             continue
         
