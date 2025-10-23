@@ -14,9 +14,26 @@ for i in range(1, n+1):
             dp[i][j] = max(dp[i][j], numbers[i]) 
             continue
         if numbers[i]>=0:
+            if dp[i-1][j] == MIN:
+                continue
             dp[i][j] = dp[i-1][j] + numbers[i]
             continue
         if j == 0 :
+            continue
+        if dp[i-1][j-1] == MIN:
+            continue
+        dp[i][j] = dp[i-1][j-1] + numbers[i]
+
+ans = 0 
+for d in dp:
+    ans = max(ans, max(d))
+print(ans)
+
+
+$0
+        if j == 0 :
+            continue
+        if dp[i-1][j-1] == MIN:
             continue
         dp[i][j] = dp[i-1][j-1] + numbers[i]
 
