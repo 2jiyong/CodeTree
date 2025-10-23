@@ -28,19 +28,6 @@ ans = 0
 for d in dp:
     ans = max(ans, max(d))
 print(ans)
-
-
-$0
-        if j == 0 :
-            continue
-        if dp[i-1][j-1] == MIN:
-            continue
-        dp[i][j] = dp[i-1][j-1] + numbers[i]
-
-ans = 0 
-for d in dp:
-    ans = max(ans, max(d))
-print(ans)
 # 1. 음수일 때
 # # j=0이면불가
 # # dp[i-1][j-1] 에 더한다
