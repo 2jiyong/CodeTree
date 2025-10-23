@@ -26,6 +26,8 @@ for i in range(1, n+1):
 ans = 0 
 for d in dp:
     ans = max(ans, max(d))
+if ans == 0:
+    ans = max(numbers[1:])
 print(ans)
 # 1. 음수일 때
 # # j=0이면불가
