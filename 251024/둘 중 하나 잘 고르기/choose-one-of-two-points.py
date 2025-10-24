@@ -31,4 +31,4 @@ for i in range(1, 2*n):
             dp[i][j] = max(dp[i][j], dp[i-1][j] + blue[i])
 
 
-print(max(dp[2*n-1]))
+print(dp[2*n-1][n])
