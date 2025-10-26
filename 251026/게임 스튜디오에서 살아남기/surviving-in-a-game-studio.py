@@ -34,4 +34,4 @@ ans = 0
 for j in range(3):
     for k in range(3):
         ans += dp[n][j][k] % mod_num
-print(ans)
+print(ans% mod_num)
