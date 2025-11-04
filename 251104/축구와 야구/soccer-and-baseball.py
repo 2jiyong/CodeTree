@@ -18,9 +18,9 @@ dp[0][0][1] = b[0]
 for i in range(1, n):
     for j in range(12):
         for k in range(10):
-            if dp[i-1][j-1][k] != MIN:
+            if j!= 0 and dp[i-1][j-1][k] != MIN:
                 dp[i][j][k] = max(dp[i][j][k], dp[i-1][j-1][k] + s[i])
-            if dp[i-1][j][k-1] != MIN:
+            if k != 0 and dp[i-1][j][k-1] != MIN:
                 dp[i][j][k] = max(dp[i][j][k], dp[i-1][j][k-1] + b[i])
 
 # for d in dp[n-1]:
