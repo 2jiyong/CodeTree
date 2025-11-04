@@ -12,6 +12,7 @@ import sys
 MIN = -sys.maxsize
 dp = [[[MIN]*10 for _ in range(12)] for _ in range(n)]
 
+dp[0][0][0] = 0
 dp[0][1][0] = s[0]
 dp[0][0][1] = b[0]
 
@@ -22,6 +23,7 @@ for i in range(1, n):
                 dp[i][j][k] = max(dp[i][j][k], dp[i-1][j-1][k] + s[i])
             if k != 0 and dp[i-1][j][k-1] != MIN:
                 dp[i][j][k] = max(dp[i][j][k], dp[i-1][j][k-1] + b[i])
+            dp[i][j][k] = max(dp[i][j][k], dp[i-1][j][k])
 
 # for d in dp[n-1]:
 #     print(d)
