@@ -15,5 +15,7 @@ for num in arr:
     target = k-num
     if target in d:
         ans += d[target]
+        if target == num :
+            ans -= 1 
 
 print(ans//2)
