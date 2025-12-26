@@ -8,7 +8,7 @@ for _ in range(n):
 
 # Please write your code here.
 s = set()
-for i in range(10):
+for i in range(n):
     if commands[i] == "add":
         s.add(x[i])
     if commands[i] == "remove":
