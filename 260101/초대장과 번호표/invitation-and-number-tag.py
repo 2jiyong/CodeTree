@@ -12,6 +12,7 @@ for _ in range(G):
 # 그룹 사이즈가 1이면 그사람은 받는다 
 ans = 1
 new_members = set([1])
+ans_set = set([1])
 while True:
     invite_members = new_members
     new_members = set()
@@ -32,7 +33,7 @@ while True:
                 group_size[i] = 0
                 for person in group[i]:
                     new_members.add(person)
-                ans += 1
-                
-print(ans)
 
+    ans += len(new_members)
+
+print(ans)
