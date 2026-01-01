@@ -29,7 +29,8 @@ while True:
             if group_size[i] == 1:
                 group_size[i] = 0
                 for person in group[i]:
-                    new_members.add(person)
+                    if person not in invite_members:
+                        new_members.add(person)
 
     ans += len(new_members)
 
