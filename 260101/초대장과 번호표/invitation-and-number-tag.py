@@ -22,9 +22,6 @@ while True:
 
     for member in invite_members:
         for i in range(G):
-            if group_size[i] == 0:
-                continue
-
             if member in group[i]:
                 group[i].remove(member)
                 group_size[i] -= 1
