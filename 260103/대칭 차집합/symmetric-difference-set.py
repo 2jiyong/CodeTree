@@ -3,8 +3,8 @@ A = list(map(int, input().split()))
 B = list(map(int, input().split()))
 
 # Please write your code here.
-ans = n+m
-for a in A: 
-    if a in B:
-        ans -= 2
-print(ans)
+a = set(A)
+b = set(B)
+
+c  = a&b
+print(n+m - len(c)*2)
