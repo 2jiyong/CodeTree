@@ -22,16 +22,24 @@ for i in range(n):
     if com == "add":
         s.add(num)
     if com == "remove":
-        s.remvoe(num)
+        s.remove(num)
     if com == "find":
         if num in s:
             print("true")
         else:
             print("false")
     if com == "lower_bound":
-        print(s[s.bisect_left(num)])
+        target = s.bisect_left(num)
+        if target >= len(s):
+            print("None")
+        else: 
+            print(s[s.bisect_left(num)])
     if com == "upper_bound":
-        print(s[s.bisect_right(num)])
+        target = s.bisect_right(num)
+        if target >= len(s):
+            print("None")
+        else: 
+            print(s[s.bisect_right(num)])
     if com == "largest":
         if s:
             print(s[-1])
